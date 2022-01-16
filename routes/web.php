@@ -6,6 +6,8 @@ use App\Http\Controllers\ChannelController;
 use App\Http\Controllers\PostController;
 use App\Facades\Postcard;
 use App\Services\PostcardSendingService;
+use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,4 +39,13 @@ Route::get('/postcards', function () {
 // Send Postcard using Custom Facades Method. 
 Route::get('/facades', function () {
     Postcard::hello("This is a sample postcard sent by Aadhar gaur.", "aadhar44@mailinator.com");
+});
+
+
+Route::get('/macros-test', function () {
+
+    // dd(Str::prefix('9412578963', 'ABCD-'));
+    // dd(Str::partNumber('9412578963'));
+
+    return Response::errorJson('A huge error occured! BOOM!');
 });
