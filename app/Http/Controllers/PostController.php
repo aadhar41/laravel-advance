@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\Channel;
 use Illuminate\Http\Request;
+use Illuminate\Pipeline\Pipeline;
 
 class PostController extends Controller
 {
@@ -15,7 +16,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::allPosts();
+
+        return view('post.index', compact('posts'));
     }
 
     /**

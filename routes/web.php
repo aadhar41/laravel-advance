@@ -30,6 +30,8 @@ Route::get('/channels', [ChannelController::class, 'index']);
 
 Route::get('/post/create', [PostController::class, 'create']);
 
+Route::get('/posts', [PostController::class, 'index']);
+
 // Send Postcard Function
 Route::get('/postcards', function () {
     $postcardService = new PostcardSendingService($country = "U.S.", $width = 4, $height = 6);

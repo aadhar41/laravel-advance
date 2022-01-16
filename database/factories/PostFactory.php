@@ -16,6 +16,7 @@ class PostFactory extends Factory
         return [
             "title" => $this->faker->sentence(),
             "body" => $this->faker->paragraph(),
+            "active" => random_int(0, 1),
         ];
     }
 }
